@@ -1,8 +1,7 @@
 #!/bin/bash
 #Supreme Team
 #BETA INSTALL
-
-function install() {    
+  
 if [ -d /home/pi/Lightgun ]; then
 dialog --infobox "It looks like the Sinden lightgun is already installed!" 4 45 ; sleep 3
 
@@ -90,11 +89,6 @@ fi
 fi
 fi
 
-install_patch
-dialog --infobox "Sinden Lightgun now installed." 3 45 ; sleep 3
-}
-
-function install_patch() {
 if [ -f /opt/retropie/emulators/retroarch/bin-org/retroarch-cg2glsl ]; then
 dialog --infobox "Sinden retroarch patch already installed!" 4 45 ; sleep 3    
 else
@@ -110,6 +104,5 @@ sudo chmod +x /opt/retropie/emulators/retroarch/bin/*
 dialog --infobox "Sinden retroarch patch now installed!" 4 45 ; sleep 3
 fi
 fi
-}
 
-install
+dialog --infobox "Sinden Lightgun now installed." 3 45 ; sleep 3
