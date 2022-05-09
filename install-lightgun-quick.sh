@@ -15,6 +15,11 @@ sudo mv /home/pi/SindenLightgunSoftwareReleaseV1.07/SindenLightgunLinuxSoftwareV
 sudo rm -R /home/pi/SindenLightgunSoftwareReleaseV1.07
 sudo wget -q https://raw.githubusercontent.com/SupremePi/supreme-sinden/main/sinden-menu.sh -P /home/pi/Lightgun/RetroPieScripts
 
+if [ -f $HOME/tamoplus/scripts/sinden-menu.sh ]; then
+sudo rm $HOME/tamoplus/scripts/sinden-menu.sh
+cp /home/pi/Lightgun/RetroPieScripts/sinden-menu.sh $HOME/tamoplus/scripts/
+fi
+
 sudo chmod -R 777 /home/pi/Lightgun
 sudo chown -R pi:pi /home/pi/Lightgun 
 sudo apt install -y mono-complete
