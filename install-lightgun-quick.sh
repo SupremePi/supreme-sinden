@@ -1,8 +1,7 @@
 #!/bin/bash
 #Supreme Team
 #BETA INSTALL
-
-cat <<\EOF152935 > "/tmp/sinden-install.sh"
+  
 if [ -d /home/pi/Lightgun ]; then
 dialog --infobox "It looks like the Sinden lightgun is already installed!" 4 45 ; sleep 3
 
@@ -107,7 +106,4 @@ fi
 fi
 
 dialog --infobox "Sinden Lightgun now installed." 3 45 ; sleep 3
-EOF152935
-sudo chmod +x /tmp/sinden-install.sh
-fi
 
