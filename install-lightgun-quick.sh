@@ -111,4 +111,3 @@ EOF152935
 sudo chmod +x /tmp/sinden-install.sh
 fi
 
-/tmp/sinden-install.sh
