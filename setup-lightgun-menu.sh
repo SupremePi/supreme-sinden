@@ -135,7 +135,7 @@ sudo unzip -o SindenLightgunSoftwareReleaseV1.07.zip
 sudo rm /home/pi/SindenLightgunSoftwareReleaseV1.07.zip
 sudo mv /home/pi/SindenLightgunSoftwareReleaseV1.07/SindenLightgunLinuxSoftwareV1.07/Pi-Arm/Lightgun /home/pi/
 sudo rm -R /home/pi/SindenLightgunSoftwareReleaseV1.07
-sudo wget -q https://raw.githubusercontent.com/SupremePi/sinden-menu/main/sinden-menu.sh -P /home/pi/Lightgun/RetroPieScripts
+sudo wget -q https://raw.githubusercontent.com/SupremePi/supreme-sinden/main/sinden-menu.sh -P /home/pi/Lightgun/RetroPieScripts
 
 sudo chmod -R 777 /home/pi/Lightgun
 sudo chown -R pi:pi /home/pi/Lightgun 
