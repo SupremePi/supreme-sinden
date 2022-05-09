@@ -1,7 +1,25 @@
 #!/bin/bash
 #Supreme Team
 #BETA INSTALL
-  
+
+function main_menu() {
+    local choice
+
+    while true; do
+        choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
+            --ok-label OK --cancel-label Exit \
+            --menu "What action would you like to perform?" 25 75 20 \
+            1 "Sinden install" \
+            2>&1 > /dev/tty)
+
+        case "$choice" in
+            1) install  ;;
+            *)  break ;;
+        esac
+    done
+}
+
+install() {
 if [ -d /home/pi/Lightgun ]; then
 dialog --infobox "It looks like the Sinden lightgun is already installed!" 4 45 ; sleep 3
 
@@ -106,4 +124,6 @@ fi
 fi
 
 dialog --infobox "Sinden Lightgun now installed." 3 45 ; sleep 3
+}
 
+main_menu
