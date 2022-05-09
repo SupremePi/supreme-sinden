@@ -1,7 +1,8 @@
 #!/bin/bash
 #Supreme Team
 #BETA INSTALL
-  
+
+function install_sinden() {  
 if [ -d /home/pi/Lightgun ]; then
 dialog --infobox "It looks like the Sinden lightgun is already installed!" 4 45 ; sleep 3
 
@@ -106,3 +107,6 @@ fi
 fi
 
 dialog --infobox "Sinden Lightgun now installed." 3 45 ; sleep 3
+}
+
+install_sinden
