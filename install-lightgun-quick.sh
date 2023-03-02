@@ -35,12 +35,14 @@ cp -v Borders/RetroArchBorders/* /opt/retropie/emulators/retroarch/overlays/
 
 #Check if on Supreme ultra V1
 if [ -d /home/pi/RetroPie/retropiemenu/controllertools ]; then
-
+if [ -d /home/pi/RetroPie/scripts/.sb-unified ]; then
 cp /home/pi/Lightgun/SindenLightgun.png /home/pi/RetroPie/scripts/.sb-unified/retropiemenu/icons/
+fi
 cp /home/pi/Lightgun/RetroPieScripts/sinden-menu.sh /home/pi/RetroPie/retropiemenu/controllertools
 sudo chmod +x /home/pi/RetroPie/retropiemenu/controllertools/sinden-menu.sh
+if [ -d /home/pi/RetroPie/scripts/.sb-unified ]; then
 sudo cp /home/pi/RetroPie/retropiemenu/controllertools/sinden-menu.sh /home/pi/RetroPie/scripts/.sb-unified/retropiemenu/controllertools/
-
+fi
 cp /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml.bkp
 cp /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml /tmp
 
@@ -60,8 +62,10 @@ else
   echo "	</game>" >> /tmp/templist.xml
   echo "</gameList>" >> /tmp/templist.xml
   cp /tmp/templist.xml /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml
+  if [ -d /home/pi/RetroPie/scripts/.sb-unified ]; then
   cp /tmp/templist.xml /home/pi/RetroPie/scripts/.sb-unified/retropiemenu/gamelist.xml
   cp /tmp/templist.xml /home/pi/RetroPie/scripts/.sb-unified/retropie-gml/gamelist.xml
+  fi
   cp /tmp/templist.xml /home/pi/RetroPie/retropiemenu/gamelist.xml
 fi 
   
