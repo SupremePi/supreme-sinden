@@ -33,16 +33,32 @@ wget --output-document=SindenLightgun.png https://static.miraheze.org/sindenligh
 cp /home/pi/Lightgun/SindenLightgun.png /home/pi/RetroPie/retropiemenu/icons/
 cp -v Borders/RetroArchBorders/* /opt/retropie/emulators/retroarch/overlays/
 
-#Check if on Supreme ultra V1
+#Check if on Supreme ultra
 if [ -d /home/pi/RetroPie/retropiemenu/controllertools ]; then
+
+#Check if on Supreme ultra v1
 if [ -d /home/pi/RetroPie/scripts/.sb-unified ]; then
 cp /home/pi/Lightgun/SindenLightgun.png /home/pi/RetroPie/scripts/.sb-unified/retropiemenu/icons/
 fi
-cp /home/pi/Lightgun/RetroPieScripts/sinden-menu.sh /home/pi/RetroPie/retropiemenu/controllertools
+
+#Check if on Supreme ultra v2
+if [ -d /home/pi/.supreme_toolkit ]; then
+cp /home/pi/Lightgun/SindenLightgun.png /home/pi/.supreme_toolkit/sb_toolkit/retropiemenu/icons/
+fi
+
+cp /home/pi/Lightgun/RetroPieScripts/sinden-menu.sh /home/pi/RetroPie/retropiemenu/controllertools/
 sudo chmod +x /home/pi/RetroPie/retropiemenu/controllertools/sinden-menu.sh
+
+#Check if on Supreme ultra v1
 if [ -d /home/pi/RetroPie/scripts/.sb-unified ]; then
 sudo cp /home/pi/RetroPie/retropiemenu/controllertools/sinden-menu.sh /home/pi/RetroPie/scripts/.sb-unified/retropiemenu/controllertools/
 fi
+
+#Check if on Supreme ultra v2
+if [ -d /home/pi/.supreme_toolkit ]; then
+sudo cp /home/pi/RetroPie/retropiemenu/controllertools/sinden-menu.sh /home/pi/.supreme_toolkit/sb_toolkit/retropiemenu/emulationtools/
+fi
+
 cp /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml.bkp
 cp /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml /tmp
 
